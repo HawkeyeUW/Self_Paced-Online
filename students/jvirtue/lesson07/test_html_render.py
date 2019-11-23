@@ -1,7 +1,7 @@
-#Lesson 7 Assignment 1
-#HTML Render Test Script
-#Jason Virtue 03/02/2019
-#UW Self Paced Python Course
+# Lesson 7 Assignment 1
+# HTML Render Test Script
+# Jason Virtue 03/02/2019
+# UW Self Paced Python Course
 
 """
 test code for html_render.py
@@ -38,6 +38,7 @@ def render_result(element, ind=""):
 ########
 # Step 1
 ########
+
 
 def test_init():
     """
@@ -88,6 +89,7 @@ def test_render_element():
 # Uncomment this one after you get the one above to pass
 # Does it pass right away?
 
+
 def test_render_element2():
     """
     Tests whether the Element can render two pieces of text
@@ -111,7 +113,6 @@ def test_render_element2():
     # making sure the opening and closing tags are right.
     assert file_contents.startswith("<html>")
     assert file_contents.endswith("</html>")
-
 
 
 # ########
@@ -167,7 +168,7 @@ def test_sub_element():
     page.append("Some more plain text.")
 
     file_contents = render_result(page)
-    print(file_contents) # so we can see it if the test fails
+    print(file_contents)  # so we can see it if the test fails
 
     # note: The previous tests should make sure that the tags are getting
     #       properly rendered, so we don't need to test that here.
@@ -185,12 +186,14 @@ def test_sub_element():
 
 # Add your tests here!
 
+
 def test_head():
     e = Head("this is some text")
     file_contents = render_result(e).strip()
     assert("this is some text") in file_contents
     assert file_contents.startswith("<head>")
     assert file_contents.endswith("</head>")
+
 
 def test_title():
     e = Title("this is some text")
@@ -200,7 +203,7 @@ def test_title():
     assert file_contents.endswith("</title>")
     assert "\n" not in file_contents
     print(file_contents)
-    
+
 
 # #####################
 # # indentation testing
@@ -213,7 +216,8 @@ def test_indent():
     Tests that the indentation gets passed through to the renderer
     """
     html = Html("some content")
-    file_contents = render_result(html, ind="").rstrip()  #remove the end newline
+    file_contents = render_result(
+        html, ind="").rstrip()  # remove the end newline
 
     print(file_contents)
     lines = file_contents.split("\n")
