@@ -9,7 +9,7 @@ def length(list):
 
 #Generate list
 fruit_list = ["Apples","Pears","Oranges","Peaches"]
-new_fruit_list = ["Apples","Pears","Oranges","Peaches"]
+#new_fruit_list = ["Apples","Pears","Oranges","Peaches"]
 
 #Print Fruit list
 print(fruit_list)
@@ -23,12 +23,12 @@ print(fruit_list)
 #User input number from 1 to x
 num_response = int(input("Please input one number from 1 to {}> ".format(length(fruit_list))))-1
 print("Select fruit based on user input")
-print((num_response+1) , ": " ,fruit_list[num_response])
+print((num_response)+1 , ": " ,fruit_list[num_response])
 
 #Add fruit to beginning
 response = input("What is another fruit you like?> ")
 fruit_list = [response] + fruit_list
-print("Print fruit at end of list")
+print("Print fruit at beginning of list")
 print(fruit_list)
 
 #Add fruit to beginning with insert
@@ -58,6 +58,7 @@ response = input("What fruit do you want to delete?> ")
 fruit_list.remove(response)
 print("Remove fruit from list based on user input")
 print(fruit_list)
+new_fruit_list = tuple(fruit_list)
 
 #Series 3
 #Ask user if they like the fruit and if no remove it from list
@@ -66,9 +67,9 @@ for item in new_fruit_list:
     while answer_response.lower() != "yes" and answer_response.lower() != "no":
         answer_response = input("Please answer yes or no ")
     if answer_response.lower() == "no":
-        new_fruit_list.remove(item)
+        fruit_list.remove(item)
 
-print("The fruits you like are {}".format(new_fruit_list))
+print("The fruits you like are {}".format(fruit_list))
 
 #Series 4
 #Copy list
