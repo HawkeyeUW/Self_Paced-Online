@@ -5,7 +5,7 @@
 
 #Task One String Format
 
-a_list = ( 2, 123.4567, 10000, 12345.67)
+a_list = [ 2, 123.4567, 10000, 12345.67]
 b_list = "file_002 :   123.46, 1.00e+04, 1.23e+04"
 
 def format_list(seq):
@@ -27,7 +27,7 @@ print(format_list(a_list))
 assert format_list(a_list) == b_list
 
 #Task Three Display variable lenght tuples in a string
-a_tuple = [1,2,3,4,5,6,7]
+a_tuple = (1,2,3,4,5,6,7)
 
 def display_item(seq):
     l = len(seq)
@@ -37,7 +37,7 @@ display_item(a_tuple)
 
 #Task Four Reformat five element tuple
 
-b_tuple = [4,30,2017,2,27]
+b_tuple = (4,30,2017,2,27)
 def arrange_list(seq):
     return "{:02d}".format(seq[3]) + " {}".format(seq[4]) + " {}".format(seq[2]) + " {:02d}".format(seq[0]) + " {}".format(seq[1])
 
@@ -46,7 +46,7 @@ print(arrange_list(b_tuple))
 assert arrange_list(b_tuple) == "02 27 2017 04 30"
 
 #Task Five f-string formatting
-c_tuple = ['oranges', 1.3, 'lemons', 1.1]
+c_tuple = ('oranges', 1.3, 'lemons', 1.1)
 def fstring_format(seq):
     return f"The weight of an {c_tuple[0]} is {c_tuple[1]} and the weight of a {c_tuple[2]} is {c_tuple[3]}"
 
@@ -58,12 +58,12 @@ def fstring_revise(seq):
 print(fstring_revise(c_tuple))
 
 #Task Six print tabular format for name age and cost
-d_list = (("Mustang", 5, 5000),("Camaro", 10, 2000),("Trans-am", 15, 1000))
+d_list = [["Mustang", 5, 5000],["Camaro", 10, 2000],["Trans-am", 15, 1000]]
 
 for num in d_list:
     print("{:<10s}{:5d}{:10.2f}".format(*num))
 print("\n")
 
-d_tuple = [1,2,3,4,5,6,7,8,9,10]
+d_tuple = (1,2,3,4,5,6,7,8,9,10)
 for num in d_tuple:
     print('{:05d}'.format(num))
