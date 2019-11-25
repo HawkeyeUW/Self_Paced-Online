@@ -1,16 +1,11 @@
-#Lesson 4 Assignment 1
+#Lesson 4 Assignment 
 #Mailroom Part 2 Assignment
 #Jason Virtue 02/02/2019
 #UW Self Paced Python Course
-#Lesson 4 Assignment 1
-#Mailroom Part 2
-#Jason Virtue 02/05/2019
-#UW Self Paced Python Course
-
 
 #Thank You Letter Section
 def send_thanks(db_name):
-    response = "Not a donor or the word list"
+    response = ""
     while response not in db_name:
         print("----------------------------------------")
         response = input("What is the full name of the donor?>(Name, List, Exit) ")
@@ -21,6 +16,9 @@ def send_thanks(db_name):
             print("----------------------------------------")
             print("Here are our Donors:> ")
             print(donor_list(db_name))
+        elif response == "":
+            print("Please input a valid name.")
+            break
         else:
             print("----------------------------------------")
             amount = int(input("How much money did {} donate?> ".format(response)))
